@@ -12,7 +12,7 @@ func RealmCredentialSecret(cr *v1alpha1.KeycloakRealm, namespace *string, user *
 
 	outputSecret := &v1.Secret{}
 	outputSecret.ObjectMeta = v12.ObjectMeta{
-		Namespace: namespace,
+		Namespace: *namespace,
 		Name:      outputSecretName,
 	}
 	outputSecret.Data = map[string][]byte{
